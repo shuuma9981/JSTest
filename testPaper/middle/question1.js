@@ -24,4 +24,19 @@
 
 export const createUserActionString = (object) => {
   //ここに記述
+  const userName =
+    object.userName && object.userName.trim() !== ""
+      ? object.userName
+      : "名無しさん"; // userNameが空文字または未定義の場合は"名無しさん"
+  const action =
+    object.action && object.action.trim() !== ""
+      ? object.action
+      : "何もしませんでした"; // actionが空文字または未定義の場合は"何もしませんでした"
+
+  // 条件に応じて異なる形式の文字列を返す
+  if (action === "何もしませんでした") {
+    return `${userName}さんは${action}`;
+  } else {
+    return `${userName}さんが${action}しました`;
+  }
 };
