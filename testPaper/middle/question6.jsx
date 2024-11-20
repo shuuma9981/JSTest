@@ -10,19 +10,16 @@
 // 5. checkboxのvalueのデフォルト値はfalseにしてください。
 // 6. styleの付け方はインラインスタイルを適応してください。
 
-import React, { useState } from "react";
+import React, { useState } from "react"; // Reactの機能をインポートする
 
 // 人の名前を表示し、チェックボックスで打ち消し線を追加/解除できるコンポーネント
 function Question6({ userName }) {
-  // チェックボックスの状態を管理する
+  // チェックボックスの状態（true: チェック済み, false: 未チェック）を管理する
   const [isChecked, setIsChecked] = useState(false);
 
   // チェックボックスがクリックされたときに呼び出される関数
   const handleCheckboxChange = () => {
-    // ※状態の更新を次のイベントループに移動する（setTimeoutで遅延させる）
-    setTimeout(() => {
-      setIsChecked((prev) => !prev); // 現在の状態を反転する
-    }, 0);
+    setIsChecked((prev) => !prev); // 現在の状態を反転する
   };
 
   return (
@@ -46,4 +43,4 @@ function Question6({ userName }) {
   );
 }
 
-export default Question6;
+export default Question6; // このコンポーネントを他のファイルで使えるようにエクスポート
