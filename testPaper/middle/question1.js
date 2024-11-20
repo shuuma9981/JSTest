@@ -19,8 +19,8 @@
  * @return {string}
  */
 export const createUserActionString = (object) => {
-  // userNameが空文字や未定義の場合は"名無しさん"を設定
-  const userName = object.userName?.trim() || "名無しさん";
+  // userNameが空文字や未定義の場合は"名無し"を設定
+  const userName = object.userName?.trim() || "名無し";
 
   // actionが空文字や未定義の場合は"何もしませんでした"を設定
   const action = object.action?.trim() || "何もしませんでした";
