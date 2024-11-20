@@ -20,7 +20,7 @@ const Question6 = ({ userName }) => {
   };
 
   return (
-    <li>
+    <div>
       <input
         type="checkbox"
         checked={isChecked}
@@ -33,7 +33,7 @@ const Question6 = ({ userName }) => {
       >
         {userName}
       </span>
-    </li>
+    </div>
   );
 };
 

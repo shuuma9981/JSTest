@@ -8,13 +8,12 @@
 // 3. もしuserNamesの要素の中に"自分"という文字列が渡ってきたら表示しないようにしましょう。
 // 4. keyにはindexをつけましょう。
 
-/* eslint-disable no-unused-vars */
 import React from "react";
 import Question6 from "./Question6"; // Question6をインポート
 
 /**
- * @param {{ userNames: string[] }} props
- * @returns {React.ReactNode}
+ * @param
+ * @returns
  */
 const Question7 = ({ userNames }) => {
   return (
