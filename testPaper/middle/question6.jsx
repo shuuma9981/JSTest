@@ -12,26 +12,26 @@
 import React, { useState } from "react";
 
 /**
- * @param {{userName:string}} props
+ * @param {{userName: string}} props
  * @returns {ReactNode}
  */
 const TestComponent1 = ({ userName }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+    setIsChecked((prev) => !prev);
   };
 
   return (
     <li>
       <input
         type="checkbox"
-        checked={isChecked} // 修正点: checked を使用
+        checked={isChecked} // 状態を適切に管理
         onChange={handleCheckboxChange}
       />
       <span
         style={{
-          textDecoration: isChecked ? "line-through" : "none",
+          textDecoration: isChecked ? "line-through" : "none", // 状態に応じたスタイル
         }}
       >
         {userName}
