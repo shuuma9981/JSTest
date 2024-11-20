@@ -9,6 +9,7 @@
 // 4. checkboxをクリックしたら、spanタグに打ち消し線が入るようにしましょう
 // 5. checkboxのvalueのデフォルト値はfalseにしてください。
 // 6. styleの付け方はインラインスタイルを適応してください。
+/* eslint-disable no-unused-vars */
 
 import React, { useState } from "react";
 
@@ -26,11 +27,7 @@ const Question6 = ({ userName }) => {
         checked={isChecked}
         onChange={handleCheckboxChange}
       />
-      <span
-        style={{
-          textDecoration: isChecked ? "line-through" : "none",
-        }}
-      >
+      <span style={{ textDecoration: isChecked ? "line-through" : "none" }}>
         {userName}
       </span>
     </div>

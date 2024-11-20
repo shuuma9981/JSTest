@@ -9,12 +9,8 @@
 // 4. keyにはindexをつけましょう。
 
 import React from "react";
-import Question6 from "./Question6"; // Question6をインポート
+import Question6 from "./Question6";
 
-/**
- * @param
- * @returns
- */
 const Question7 = ({ userNames }) => {
   return (
     <ul>
@@ -22,9 +18,7 @@ const Question7 = ({ userNames }) => {
         .filter((name) => name !== "自分") // "自分"を除外
         .map((name, index) => (
           <li key={index}>
-            {" "}
-            {/* index を key として使用 */}
-            <Question6 userName={name} /> {/* Question6 を使って名前を表示 */}
+            <Question6 userName={name} />
           </li>
         ))}
     </ul>
