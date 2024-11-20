@@ -17,12 +17,20 @@
  *  @return {(string|number)[]}
  */
 export const toggleArrayElement = (array, ele) => {
-  //ここに記述
-  const index = array.indexOf(ele); // 配列内で要素の位置を探す
-  if (index !== -1) {
-    array.splice(index, 1); // 要素が見つかった場合、その要素を削除
-  } else {
-    array.push(ele); // 要素が見つからない場合、配列の最後尾に追加
+  // 引数が配列であることを確認
+  if (!Array.isArray(array)) {
+    throw new Error("第一引数は配列でなければなりません");
   }
-  return array; // 配列を返す
+
+  // 配列内で指定された要素のインデックスを取得
+  const index = array.indexOf(ele);
+
+  // 要素が見つかれば削除し、見つからなければ追加
+  if (index !== -1) {
+    // 要素を削除した新しい配列を返す
+    return array.slice(0, index).concat(array.slice(index + 1));
+  } else {
+    // 配列の末尾に要素を追加した新しい配列を返す
+    return [...array, ele];
+  }
 };

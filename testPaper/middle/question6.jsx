@@ -26,7 +26,7 @@ const TestComponent1 = ({ userName }) => {
     <li>
       <input
         type="checkbox"
-        value={isChecked}
+        checked={isChecked} // 修正点: checked を使用
         onChange={handleCheckboxChange}
       />
       <span
