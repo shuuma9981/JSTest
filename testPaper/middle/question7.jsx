@@ -10,21 +10,26 @@
 
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Question6 from "./Question6"; // Question6をインポート
 
 /**
  * @param {{ userNames: string[] }} props
  * @returns {React.ReactNode}
  */
-const TestComponent2 = ({ userNames }) => {
+const Question7 = ({ userNames }) => {
   return (
     <ul>
       {userNames
         .filter((name) => name !== "自分") // "自分"を除外
-        .map((name) => (
-          <li key={name}>{name}</li> //name
+        .map((name, index) => (
+          <li key={index}>
+            {" "}
+            {/* index を key として使用 */}
+            <Question6 userName={name} /> {/* Question6 を使って名前を表示 */}
+          </li>
         ))}
     </ul>
   );
 };
 
-export default TestComponent2;
+export default Question7;

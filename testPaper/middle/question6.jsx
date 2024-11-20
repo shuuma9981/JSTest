@@ -12,15 +12,9 @@
 
 import React, { useState } from "react";
 
-/**
- * @param
- * @returns
- */
-const TestComponent1 = ({ userName }) => {
-  // 初期値はfalse
+const Question6 = ({ userName }) => {
   const [isChecked, setIsChecked] = useState(false);
 
-  // チェックボックスがクリックされた時に呼ばれる関数
   const handleCheckboxChange = () => {
     setIsChecked((prev) => !prev);
   };
@@ -29,12 +23,12 @@ const TestComponent1 = ({ userName }) => {
     <li>
       <input
         type="checkbox"
-        checked={isChecked} // checked属性はisCheckedの状態に基づいている
-        onChange={handleCheckboxChange} // チェックボックスが変わるとhandleCheckboxChangeを呼び出す
+        checked={isChecked}
+        onChange={handleCheckboxChange}
       />
       <span
         style={{
-          textDecoration: isChecked ? "line-through" : "none", // isCheckedがtrueならline-through、falseならnone
+          textDecoration: isChecked ? "line-through" : "none",
         }}
       >
         {userName}
@@ -43,4 +37,4 @@ const TestComponent1 = ({ userName }) => {
   );
 };
 
-export default TestComponent1;
+export default Question6;
