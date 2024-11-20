@@ -18,11 +18,14 @@
  * @param {{userName?:string,action?:string}} object
  * @return {string}
  */
-
 export const createUserActionString = (object) => {
-  const userName = object.userName?.trim() || "名無しさん"; // userNameが空文字や未定義の場合は"名無しさん"
-  const action = object.action?.trim() || "何もしませんでした"; // actionが空文字や未定義の場合は"何もしませんでした"
+  // userNameが空文字や未定義の場合は"名無しさん"を設定
+  const userName = object.userName?.trim() || "名無しさん";
 
+  // actionが空文字や未定義の場合は"何もしませんでした"を設定
+  const action = object.action?.trim() || "何もしませんでした";
+
+  // actionが"何もしませんでした"の場合は"〜さんは何もしませんでした"の形式に
   return action === "何もしませんでした"
     ? `${userName}さんは${action}`
     : `${userName}さんが${action}しました`;
