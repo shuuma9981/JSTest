@@ -11,16 +11,22 @@
 import React from "react";
 import Question6 from "./question6";
 
+// 名前のリストをチェックボックス付きで表示するコンポーネント
 function Question7({ userNames }) {
   return (
     <ul>
+      {" "}
+      {/* 名前のリスト全体を囲むulタグ */}
       {userNames.map((userName, index) =>
-        userName === "自分" ? null : (
-          <Question6 key={index} userName={userName} />
+        userName === "自分" ? null : ( // 名前が「自分」の場合は表示しない
+          <Question6
+            key={index} // 各要素にユニークなキーを設定
+            userName={userName} // 問6のコンポーネントに名前を渡す
+          />
         ),
       )}
     </ul>
   );
 }
 
-export default Question7;
+export default Question7; // このコンポーネントを他のファイルで使えるようにする
