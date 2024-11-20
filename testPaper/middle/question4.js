@@ -18,4 +18,11 @@
  */
 export const toggleArrayElement = (array, ele) => {
   //ここに記述
+  const index = array.indexOf(ele); // 配列内で要素の位置を探す
+  if (index !== -1) {
+    array.splice(index, 1); // 要素が見つかった場合、その要素を削除
+  } else {
+    array.push(ele); // 要素が見つからない場合、配列の最後尾に追加
+  }
+  return array; // 配列を返す
 };

@@ -9,10 +9,35 @@
 // 5. checkboxのvalueのデフォルト値はfalseにしてください。
 // 6. styleの付け方はインラインスタイルを適応してください。
 
+import React, { useState } from "react";
+
 /**
  * @param {{userName:string}} props
  * @returns {ReactNode}
  */
-const TestComponent1 = ({ userName }) => {};
+const TestComponent1 = ({ userName }) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  return (
+    <li>
+      <input
+        type="checkbox"
+        value={isChecked}
+        onChange={handleCheckboxChange}
+      />
+      <span
+        style={{
+          textDecoration: isChecked ? "line-through" : "none",
+        }}
+      >
+        {userName}
+      </span>
+    </li>
+  );
+};
 
 export default TestComponent1;

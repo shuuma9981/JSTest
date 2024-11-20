@@ -22,4 +22,12 @@
 
 export const priceCalculator = (price, isTakeOut) => {
   //ここを記述
+  // 税率を決定する
+  const taxRate = isTakeOut ? 0.08 : 0.1;
+
+  // 消費税を含めた料金を計算
+  const total = price + price * taxRate;
+
+  // 1円未満を切り捨てて結果を返す
+  return Math.floor(total);
 };

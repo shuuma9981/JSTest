@@ -8,10 +8,23 @@
 // 3. もしuserNamesの要素の中に"自分"という文字列が渡ってきたら表示しないようにしましょう。
 // 4. keyにはindexをつけましょう。
 
+/* eslint-disable no-unused-vars */
+import React from "react";
+
 /**
- * @param {{userNames:string[]}} props
- * @returns {ReactNode}
+ * @param {{ userNames: string[] }} props
+ * @returns {React.ReactNode}
  */
-const TestComponent2 = ({ userNames }) => {};
+const TestComponent2 = ({ userNames }) => {
+  return (
+    <ul>
+      {userNames
+        .filter((name) => name !== "自分")
+        .map((name, index) => (
+          <li key={index}>{name}</li>
+        ))}
+    </ul>
+  );
+};
 
 export default TestComponent2;

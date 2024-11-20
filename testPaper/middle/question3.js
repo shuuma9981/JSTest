@@ -15,4 +15,7 @@
  */
 export const sumAndAverage = (array) => {
   //ここに記述
+  const sum = array.reduce((total, num) => total + num, 0); // 配列の合計値を計算
+  const average = Math.round((sum / array.length) * 10) / 10; // 平均値を計算して小数点第一位で四捨五入
+  return { sum, average }; // 結果をオブジェクトとして返す
 };
