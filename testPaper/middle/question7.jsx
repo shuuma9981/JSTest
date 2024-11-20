@@ -9,20 +9,18 @@
 // 4. keyにはindexをつけましょう。
 
 import React from "react";
-import Question6 from "./Question6";
+import Question6 from "./question6";
 
-const Question7 = ({ userNames }) => {
+function Question7({ userNames }) {
   return (
     <ul>
-      {userNames
-        .filter((name) => name !== "自分") // "自分"を除外
-        .map((name, index) => (
-          <li key={index}>
-            <Question6 userName={name} />
-          </li>
-        ))}
+      {userNames.map((userName, index) =>
+        userName === "自分" ? null : (
+          <Question6 key={index} userName={userName} />
+        ),
+      )}
     </ul>
   );
-};
+}
 
 export default Question7;
