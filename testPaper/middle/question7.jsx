@@ -15,13 +15,13 @@ import React from "react";
  * @param {{ userNames: string[] }} props
  * @returns {React.ReactNode}
  */
-const TestComponent2 = ({ userNames }) => {
+const TestComponent2 = ({ userNames = [] }) => {
   return (
     <ul>
       {userNames
         .filter((name) => name !== "自分")
-        .map((name, index) => (
-          <li key={index}>{name}</li>
+        .map((name) => (
+          <li key={name}>{name}</li>
         ))}
     </ul>
   );
