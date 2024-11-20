@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 // 問6:**人の名前を表示してチェックできるようにしよう**
 //    propsとして渡ってくるuserName:人の名前(文字列)を表示するコンポーネントを完成させてください。
 //    また、このコンポーネントには以下のような機能をつけてください。
@@ -12,12 +13,14 @@
 import React, { useState } from "react";
 
 /**
- * @param {{userName: string}} props
- * @returns {ReactNode}
+ * @param
+ * @returns
  */
 const TestComponent1 = ({ userName }) => {
+  // 初期値はfalse
   const [isChecked, setIsChecked] = useState(false);
 
+  // チェックボックスがクリックされた時に呼ばれる関数
   const handleCheckboxChange = () => {
     setIsChecked((prev) => !prev);
   };
@@ -26,12 +29,12 @@ const TestComponent1 = ({ userName }) => {
     <li>
       <input
         type="checkbox"
-        checked={isChecked} // 状態を適切に管理
-        onChange={handleCheckboxChange}
+        checked={isChecked} // checked属性はisCheckedの状態に基づいている
+        onChange={handleCheckboxChange} // チェックボックスが変わるとhandleCheckboxChangeを呼び出す
       />
       <span
         style={{
-          textDecoration: isChecked ? "line-through" : "none", // 状態に応じたスタイル
+          textDecoration: isChecked ? "line-through" : "none", // isCheckedがtrueならline-through、falseならnone
         }}
       >
         {userName}
