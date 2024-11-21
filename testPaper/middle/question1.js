@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-// - 問題1: **指定の文字列を完成させよう**
-//    人の名前(userName)とその人が行う動作(action)の２つのプロパティを持つオブジェクトを引数に受け取り、
 //    以下のような文字列を返す関数を完成させてください。
 //    userNameに空文字("")か値が渡って来なかった時は人の名前を名無しに変更してください。
 //    actionに空文字("")か値が渡って来なかった時は"~さんは何もしませんでした"に変更してください。
@@ -21,7 +18,15 @@
  * @param {{userName?:string,action?:string}} object
  * @return {string}
  */
-
 export const createUserActionString = (object) => {
-  //ここに記述
+  // userNameが空文字や未定義の場合は"名無し"を設定
+  const userName = object.userName?.trim() || "名無し";
+
+  // actionが空文字や未定義の場合は"何もしませんでした"を設定
+  const action = object.action?.trim() || "何もしませんでした";
+
+  // actionが"何もしませんでした"の場合は"〜さんは何もしませんでした"の形式に
+  return action === "何もしませんでした"
+    ? `${userName}さんは${action}`
+    : `${userName}さんが${action}しました`;
 };

@@ -13,4 +13,20 @@
 
 export const changeElementText = (elementId, text) => {
   //ここに記述
+  // 指定されたIDの要素を探す
+  const element = document.getElementById(elementId);
+
+  if (element) {
+    // 要素が見つかった場合、そのテキストを変更
+    element.textContent = text;
+  } else {
+    // 要素が見つからなかった場合、新しいdiv要素を作る
+    const newDiv = document.createElement("div");
+    // 新しいdiv要素のIDを設定
+    newDiv.id = elementId;
+    // 新しいdiv要素のテキストを設定
+    newDiv.textContent = text;
+    // 新しいdiv要素をbodyに追加
+    document.body.appendChild(newDiv);
+  }
 };

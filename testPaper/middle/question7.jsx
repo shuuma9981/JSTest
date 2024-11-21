@@ -1,17 +1,22 @@
-/* eslint-disable no-unused-vars */
+import React from "react";
+import Question6 from "./Question6";
+// Question6コンポーネントをインポート
 
-// 問題7:**人の名前のチェックリストを作ろう**
-//    このコンポーネントにはuserNamesというユーザーの名前(文字列)の要素をもつ配列が渡ってきます。
-//    このコンポーネントは以下の条件を満たしてください。
-// 1. 親のタグはulタグにしましょう
-// 2. userNames全員分を問6のコンポーネントを使って表示してください。
-// 3. もしuserNamesの要素の中に"自分"という文字列が渡ってきたら表示しないようにしましょう。
-// 4. keyにはindexをつけましょう。
+const Question7 = ({ userNames }) => {
+  // Question7というコンポーネントを作成。userNamesを受け取る
 
-/**
- * @param {{userNames:string[]}} props
- * @returns {ReactNode}
- */
-const TestComponent2 = ({ userNames }) => {};
+  return (
+    <ul>
+      {userNames
+        .filter((userName) => userName !== "自分")
+        // "自分"という名前を除外
+        .map((userName, index) => (
+          <Question6 key={index} userName={userName} />
+          // 各名前に対してQuestion6コンポーネントを作成
+        ))}
+    </ul>
+  );
+};
 
-export default TestComponent2;
+export default Question7;
+// このコンポーネントを他のファイルで使えるようにする
